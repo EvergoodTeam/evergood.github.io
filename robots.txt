@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://librv.github.io/sitemap.xml.gz
+Sitemap: https://evergoodteam.github.io/sitemap.xml.gz
