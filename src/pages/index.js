@@ -41,7 +41,7 @@ export default function Home() {
           There isn't much here, so you should check out the <Link
             className="button button--primary button--lg"
             to="/docs/introduction">
-            Wiki
+            Docs
           </Link>
         </p>
       </div>
