@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://evergoodteam.github.io/sitemap.xml.gz
