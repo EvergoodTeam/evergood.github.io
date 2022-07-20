@@ -1,11 +1,12 @@
 import React from 'react';
-import clsx from 'clsx';
+//import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+//import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 
-import styles from './index.module.css';
+//import styles from './index.module.css';
 
+/*
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
@@ -24,9 +25,10 @@ function HomepageHeader() {
     </header>
   );
 }
+*/
 
 export default function Home() {
-  const { siteConfig } = useDocusaurusContext();
+  //const { siteConfig } = useDocusaurusContext();
   return (
     <Layout>
       <div
@@ -37,13 +39,9 @@ export default function Home() {
           height: '50vh',
           fontSize: '20px',
         }}>
-        <p>
-          There isn't much here, so you should check out the <Link
-            className="button button--primary button--lg"
-            to="/docs/introduction">
-            Docs
-          </Link>
-        </p>
+        <div className="shadow--tl alert alert--warning" role="alert">
+          There isn't much here, so you should check out the <Link className="button button--lg button--outline button--primary" to="/docs/introduction">Docs</Link>
+        </div>
       </div>
     </Layout>
   );

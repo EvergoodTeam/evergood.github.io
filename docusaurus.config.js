@@ -77,6 +77,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       metadata: [{name: 'keywords', content: 'minecraft, mod, modpack'}],
+
       announcementBar: {
         content:
           'The Wiki and the Documentation on our projects are still a WIP',
@@ -84,43 +85,45 @@ const config = {
         textColor: '#091E42',
         isCloseable: true,
       },
+
       navbar: {
-        title: 'Evergood',
         logo: {
-          //alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'Evergood',
+          src: 'img/evergood-light.svg',
+          srcDark: 'img/evergood-dark.svg',
         },
         hideOnScroll: false,
         items: [
           {
+            className: "header-label",
             type: 'doc',
             docId: 'introduction',
             position: 'left',
-            label: 'Intro',
+            label: 'Docs',
           },
           {
+            className: "header-label",
             to: '/blog',
             label: 'Blog',
             position: 'left'
           },
           {
-            type: 'dropdown',
-            label: 'Community',
+            className: "header-curse-link",
+            "aria-label": "",
+            href: 'https://www.curseforge.com/members/evergoodteam/projects',
             position: 'right',
-            items: [
-              {
-                label: 'Discord',
-                href: 'https://discord.gg/k2P68Y8',
-              },
-              {
-                label: 'CurseForge',
-                href: 'https://www.curseforge.com/members/evergoodteam/projects',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/evergoodteam',
-              },
-            ],
+          },
+          {
+            className: "header-crowdin-link",
+            "aria-label": "",
+            href: 'https://crowdin.com/profile/EvergoodTeam',
+            position: 'right',
+          },
+          {
+            className: "header-discord-link",
+            "aria-label": "",
+            href: 'https://discord.gg/k2P68Y8',
+            position: 'right',
           },
           {
             className: "header-github-link",
@@ -156,7 +159,11 @@ const config = {
               {
                 label: 'Curseforge',
                 href: 'https://bit.ly/evergoodproject',
-              }, 
+              },
+              {
+                label: 'Crowdin',
+                href: 'https://crowdin.com/profile/EvergoodTeam',
+              },
               {
                 label: 'Twitter',
                 href: 'https://twitter.com/evergoodteam',
@@ -182,7 +189,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['groovy'],
+        additionalLanguages: ['groovy', 'java'],
       },
     }),
 };

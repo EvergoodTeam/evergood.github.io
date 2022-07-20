@@ -57,20 +57,18 @@ The table below summarizes the supported Minecraft Versions
 |  Chassis Version  |    ?     | `1.0.x`  | `1.1.x`  | `1.2.x` |
 
 
-### `build.grade`
+### `build.gradle`
 
-In your `build.grade`, add the Project as a dependency
+In your `build.gradle`, add the Project as a dependency
 
 ```groovy title="build.gradle"
 repositories {
-    ...
     maven { url 'https://jitpack.io' }
 }
 ```
 
 ```groovy title="build.gradle"
 dependencies {
-    ...
     //Chassis
     modImplementation 'com.github.evergoodteam:chassis:<releaseVersion>'
 }
@@ -90,13 +88,62 @@ In your `fabric.mod.json`, add the Project as a dependency
 },
 ```
 
-## Documentation
+### Usage
 
 :::caution
 
 Please refer to [Compressor](https://github.com/EvergoodTeam/Compressor) as an example to work from until proper documentation is available
 
 :::
+
+```java
+public static final String MODID = "chassis";
+
+public static final ConfigBase CHASSIS_CONFIGS = new ConfigBase(MODID);
+public static final ResourcePackBase CHASSIS_RESOURCES = new ResourcePackBase(CHASSIS_CONFIGS, MODID, "https://i.imgur.com/zP1N2MZ.png", "53a074");
+
+static final List<Block> BLOCKS = new ArrayList<>();
+static final Block TEST_BLOCK = new BlockBase(BLOCKS, FabricBlockSettings.of(Material.METAL).requiresTool().hardness(1.5f).resistance(6.0f).sounds(BlockSoundGroup.METAL).nonOpaque(), true);
+static final Item TEST_ITEM = new ItemBase(new FabricItemSettings().maxCount(65));
+
+private static void testFeatures() {
+    
+    // Configs
+    CHASSIS_CONFIGS.addProperty("hideResourcePack", false, "Hides the Chassis ResourcePack from the GUI")
+            .addProperty("testProperty", true, "Test comment")
+            .addProperty("testProperty2", true)
+            .addProperty("testProperty3", true, "Test comment 3")
+            .registerProperties();
+    
+    // Blocks/Items
+    ItemGroup testGroup = new ItemGroupBase("chassis", "testgroup", TEST_BLOCK).group;
+    RegistryHandler.registerBlockAndItem("chassis", "testblock", TEST_BLOCK, testGroup);
+    RegistryHandler.registerGeneratedItem("chassis", "testitem", TEST_ITEM);
+    
+    // Asset injection
+    InjectionHandler.addModelInjection(MODID);
+    InjectionHandler.addRecipe(MODID, "testrecipe", RecipeJson.create3x3RecipeJson("item", new Identifier(MODID, "testitem"), new Identifier(MODID, "testblock"), 1));
+    InjectionHandler.addRecipe(MODID, "testrecipeshapeless", RecipeJson.createShapelessRecipeJson("item", new Identifier(MODID, "testitem"), new Identifier(MODID, "testblock"), 9));
+    
+    // Resourcepack injection
+    CHASSIS_RESOURCES.createGlobalTag("testblock")
+            .createBlockstate("testblock")
+            //.createBlockModels("testblock", "testblock", "all")
+            .createBlockDropLootTable("testblock")
+            .createRequiredToolTag("pickaxe", new String[]{"testblock"})
+            .createMiningLevelTag("stone", new String[]{"testblock"})
+            .createTexture(true, "https://i.imgur.com/BAStRdD.png", "testblock") // Truly a legendary URL
+            .createItemModel("testitem", "testitem")
+            .createTexture(false, "https://i.imgur.com/BAStRdD.png", "testitem")
+            .createLang("en_us", new HashMap<>() {{
+                put("block.chassis.testblock", "Test Block");
+                put("item.chassis.testitem", "Test Item");
+                put("itemGroup.chassis.testgroup", "Test Group");
+            }});
+
+    if (ConfigHandler.getBooleanOption(CHASSIS_CONFIGS, "hideResourcePack", false)) CHASSIS_RESOURCES.hide();
+}
+```
 
 ## 🔧 Installation {#installation}
 

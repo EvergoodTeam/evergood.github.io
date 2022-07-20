@@ -1,0 +1,9 @@
+/* Re-use table coloring */
+
+.details {
+  --docusaurus-details-transition: transform var(--ifm-transition-fast) ease;
+  --ifm-code-background: rgba(246, 247, 248, 0.15);
+  background-color: var(--ifm-table-stripe-background);
+  margin: 0 0 var(--ifm-spacing-vertical);
+  border: 1px solid var(--ifm-table-border-color);
+}
