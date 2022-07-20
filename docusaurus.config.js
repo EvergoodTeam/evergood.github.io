@@ -91,6 +91,7 @@ const config = {
           alt: 'Evergood',
           src: 'img/evergood-light.svg',
           srcDark: 'img/evergood-dark.svg',
+          className: 'evergood-navbar-logo',
         },
         hideOnScroll: false,
         items: [
