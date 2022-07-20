@@ -32,35 +32,7 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-/* Changelogs 
 
-.emgithub-container{
-  background-color: #0f8ea2 !important;
-}
-
-.hljs {
-  color: #333 !important;
-  background: #f8f8f8 !important;
-  border: 0px solid rgb(221, 221, 221) !important;
-}
-
-[data-theme='dark'] .hljs {
-  color: #f8f8f2 !important;
-  background: inherit !important;
-  border: 0px solid rgb(85, 85, 85) !important;
-}
-
-.hljs-ln {
-  background: inherit !important;;
-}
-
-[data-theme='dark'] .hljs-ln {
-  background: inherit !important;
-}
-
-.hljs-ln-line, [data-theme='dark'] .hljs-ln-line {
-  border-style : hidden !important;
-}
 
 /* Sidebar */
 .header-label, .menu__link--sublist {
