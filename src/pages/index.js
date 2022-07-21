@@ -41,7 +41,7 @@ export default function Home() {
           fontSize: '20px',
         }}>
         <div className="shadow--tl alert alert--warning" role="alert">
-          There isn't much here, so you should check out the <Link className="button button--lg button--outline button--primary" to="/docs/introduction">Docs</Link>
+          There isn't much here, so you should check out the <Link className="button button--lg button--outline button--primary" to="/docs">Docs</Link>
         </div>
       </div>
     </Layout>
