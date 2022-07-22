@@ -1,6 +1,6 @@
 {
   "name": "evergood-docs",
-  "version": "1.0.0-b",
+  "version": "1.0.0-p",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",

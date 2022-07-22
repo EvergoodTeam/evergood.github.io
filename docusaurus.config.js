@@ -180,7 +180,7 @@ const config = {
               },
               {
                 label: 'Support Us',
-                href: 'docs/support',
+                to: 'docs/support',
               },
             ],
           },
