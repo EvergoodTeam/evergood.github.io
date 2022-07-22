@@ -5,7 +5,7 @@ sidebar_position: 1
 id: chassis
 title: Chassis
 description: Information on the Chassis library
-slug: /chassis
+slug: /mods/chassis
 
 ---
 
@@ -23,127 +23,15 @@ Chassis is a Library providing utilities for dynamic asset generation (Blockstat
 
 A showcase of the available features can be found (commented) in the source code or in [**Compressor**](https://www.curseforge.com/minecraft/mc-mods/compressor).
 
-## Adding to your own project
+## 📖 Documentation {#documentation}
 
-### How versions work
+:::danger Note
 
-:::note
-
-This system could be changed in the near future
+This documentation assumes you have a decent understanding of how to set up and work on a [**Fabric Mod**](https://fabricmc.net/wiki)!
 
 :::
 
-[GitHub Releases](https://github.com/EvergoodTeam/Chassis/releases) include different Builds of the project, spanning
-from those in active development to final ones.
-
-Each version name is composed of two main parts: a <ins>version number</ins> (`1.2.34`) and a <ins>
-suffix</ins> (`-suffix`).
-
-Different <ins>suffixes</ins> are used to highlight the nature and state of a Build:
-
-- `-dev`: in active development, likely unstable and temporary
-- `-pre`: in the final stages of development, next to being finalised and released officially
-- *no suffix*: final releases, can be found on [Curseforge](https://www.curseforge.com/minecraft/mc-mods/chassis)
-
-<ins>Version numbers</ins> are grouped together based on Minecraft's Versions:  
-this means that Builds from the same group are compatible only with that specific Minecraft Version and that they're
-interchangeable with one another.
-
-The table below summarizes the supported Minecraft Versions
-
-| Minecraft Version | `1.12.2` | `1.18.1` | `1.18.2` | `1.19`  |
-|:-----------------:|:--------:|:--------:|:--------:|:-------:|
-|      Support      |    🚧     |    ✔️    |    ✔️    |   ✔️    |
-|  Chassis Version  |    ?     | `1.0.x`  | `1.1.x`  | `1.2.x` |
-
-
-### `build.gradle`
-
-In your `build.gradle`, add the Project as a dependency
-
-```groovy title="build.gradle"
-repositories {
-    maven { url 'https://jitpack.io' }
-}
-```
-
-```groovy title="build.gradle"
-dependencies {
-    //Chassis
-    modImplementation 'com.github.evergoodteam:chassis:<releaseVersion>'
-}
-```
-
-Don't forget to change `<releaseVersion>` to an appropriate version, as explained **[before](#how-versions-work)**  
-We recommend using `${project.chassis_version}` and specifying the version in your `gradle.properties` for easier access
-
-### `fabric.mod.json`
-
-In your `fabric.mod.json`, add the Project as a dependency
-
-```json title="/src/main/resources/fabric.mod.json"
-"depends": {
-    ...
-    "chassis": "1.x.x"
-},
-```
-
-### Usage
-
-:::caution
-
-Please refer to [Compressor](https://github.com/EvergoodTeam/Compressor) as an example to work from until proper documentation is available
-
-:::
-
-```java
-public static final String MODID = "chassis";
-
-public static final ConfigBase CHASSIS_CONFIGS = new ConfigBase(MODID);
-public static final ResourcePackBase CHASSIS_RESOURCES = new ResourcePackBase(CHASSIS_CONFIGS, MODID, "https://i.imgur.com/zP1N2MZ.png", "53a074");
-
-static final List<Block> BLOCKS = new ArrayList<>();
-static final Block TEST_BLOCK = new BlockBase(BLOCKS, FabricBlockSettings.of(Material.METAL).requiresTool().hardness(1.5f).resistance(6.0f).sounds(BlockSoundGroup.METAL).nonOpaque(), true);
-static final Item TEST_ITEM = new ItemBase(new FabricItemSettings().maxCount(65));
-
-private static void testFeatures() {
-    
-    // Configs
-    CHASSIS_CONFIGS.addProperty("hideResourcePack", false, "Hides the Chassis ResourcePack from the GUI")
-            .addProperty("testProperty", true, "Test comment")
-            .addProperty("testProperty2", true)
-            .addProperty("testProperty3", true, "Test comment 3")
-            .registerProperties();
-    
-    // Blocks/Items
-    ItemGroup testGroup = new ItemGroupBase("chassis", "testgroup", TEST_BLOCK).group;
-    RegistryHandler.registerBlockAndItem("chassis", "testblock", TEST_BLOCK, testGroup);
-    RegistryHandler.registerGeneratedItem("chassis", "testitem", TEST_ITEM);
-    
-    // Asset injection
-    InjectionHandler.addModelInjection(MODID);
-    InjectionHandler.addRecipe(MODID, "testrecipe", RecipeJson.create3x3RecipeJson("item", new Identifier(MODID, "testitem"), new Identifier(MODID, "testblock"), 1));
-    InjectionHandler.addRecipe(MODID, "testrecipeshapeless", RecipeJson.createShapelessRecipeJson("item", new Identifier(MODID, "testitem"), new Identifier(MODID, "testblock"), 9));
-    
-    // Resourcepack injection
-    CHASSIS_RESOURCES.createGlobalTag("testblock")
-            .createBlockstate("testblock")
-            //.createBlockModels("testblock", "testblock", "all")
-            .createBlockDropLootTable("testblock")
-            .createRequiredToolTag("pickaxe", new String[]{"testblock"})
-            .createMiningLevelTag("stone", new String[]{"testblock"})
-            .createTexture(true, "https://i.imgur.com/BAStRdD.png", "testblock") // Truly a legendary URL
-            .createItemModel("testitem", "testitem")
-            .createTexture(false, "https://i.imgur.com/BAStRdD.png", "testitem")
-            .createLang("en_us", new HashMap<>() {{
-                put("block.chassis.testblock", "Test Block");
-                put("item.chassis.testitem", "Test Item");
-                put("itemGroup.chassis.testgroup", "Test Group");
-            }});
-
-    if (ConfigHandler.getBooleanOption(CHASSIS_CONFIGS, "hideResourcePack", false)) CHASSIS_RESOURCES.hide();
-}
-```
+The documentation for utilizing Chassis in your own project can be found soon.
 
 ## 🔧 Installation {#installation}
 

@@ -1,0 +1,61 @@
+---
+sidebar_label: 'Blocks'
+sidebar_position: 1
+
+id: blocks
+title: Blocks
+description: Adding blocks
+slug: /chassis/blocks
+
+---
+
+#### Block
+
+Block objects can be created through the `BlockBase` class.  
+You can customize your Block from the ground up using `FabricBlockSettings`, or use available methods.
+
+```java
+public static final Block RUBY_ORE = new BlockBase(Material.STONE, 2.5f, 7.0f, BlockSoundGroup.STONE);
+```
+
+You could also provide a `List` to which add a Block as soon as its object is created. This can be useful to later register all your blocks, since you'll just have to cycle through its contents.
+
+```java
+public static final List<Block> BLOCKS = new ArrayList<>();
+
+public static final Block RUBY_ORE = new BlockBase(BLOCKS, Material.STONE, 2.5f, 7.0f, BlockSoundGroup.STONE);
+```
+
+#### ItemGroup
+
+With this Block we can create an `ItemGroup`, a.k.a. a Tab in the Creative menu, to which you can add all your additions.
+
+To do so we can utilize the the `ItemGroupBase` class.
+
+```java
+public static final ItemGroup YOURMOD_GROUP = new ItemGroupBase("yourmodid", "itemgroup", RUBY_ORE).group;
+```
+
+#### Registering
+
+Now we can register this Block and give it an Item form that player can hold in their inventory with `registerBlockAndItem()`.
+
+```java
+registerBlockAndItem("yourmodid", "ruby_ore", RUBY_ORE, YOURMOD_GROUP);
+```
+
+#### Result
+
+Your code should now look something like this:
+
+```java title="MyMod.java"
+public static final Block RUBY_ORE = new BlockBase(Material.STONE, 2.5f, 7.0f, BlockSoundGroup.STONE);
+
+public static final ItemGroup YOURMOD_GROUP = new ItemGroupBase("yourmodid", "itemgroup", RUBY_ORE).group;
+
+@Override
+public void onInitialize() {
+
+    registerBlockAndItem("yourmodid", "ruby_ore", RUBY_ORE, YOURMOD_GROUP);
+}
+```

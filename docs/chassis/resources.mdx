@@ -1,0 +1,35 @@
+---
+sidebar_label: 'Resources / Assets'
+sidebar_position: 4
+
+id: resources
+title: Resources / Assets
+description: Giving our blocks and items assets, localization, tags, textures
+slug: /chassis/resources
+
+---
+
+With Chassis you can generate asset files (blockstates, models, lang, textures, tags) through code, without having to experience the pain of creating 5 different files for each block/item you make.
+
+To start, you will first need to create a `ResourcePackBase` object, which will generate those assets in your config folder.  
+
+```java
+public static final ResourcePackBase YOURMOD_RESOURCES = new ResourcePackBase(YOURMOD_CONFIGS, "yourmodid");
+```
+
+This will also create a **ResourcePack**, visibile from the appropriate menu in-game. You can customize it by adding an URL with an image to use as the icon and a hex color to customize the text description color.
+
+```java
+public static final ResourcePackBase YOURMOD_RESOURCES = new ResourcePackBase(YOURMOD_CONFIGS, "yourmodid", 
+    "https://evergoodteam.github.io/utils/icons/chassisIcon.png", 
+    "53a074");
+```
+
+To customize the description you can add the entries listed here to your language file:
+
+```json title="en_us.lang"
+{
+  "yourmodid.metadata.description": "My beatiful assets",
+  "pack.source.yourmodid": "My beatiful assets"
+}
+```

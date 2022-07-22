@@ -46,6 +46,7 @@ const sidebars = {
       },
       items: ['mods/compressor', 'mods/chassis', 'mods/utilities'],
     },
+    
     {
       type: 'doc',
       id: 'support',
