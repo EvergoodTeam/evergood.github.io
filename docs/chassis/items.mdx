@@ -21,10 +21,12 @@ public static final Item YOURMOD_ITEM = new ItemBase(new FabricItemSettings());
 
 #### Registering
 
+Registering is done with the `RegistryHandler` class.
+
 You can register your Item with `registerGeneratedItem()` if it represents a generic item, or `registerHandheldItem()` if it represents a tool.
 
 ```java
-registerGeneratedItem("yourmodid", "ruby", RUBY);
+RegistryHandler.registerGeneratedItem("yourmodid", "ruby", RUBY);
 ```
 
 #### Result
@@ -41,7 +43,7 @@ public static final Item RUBY = new ItemBase(YOURMOD_GROUP);
 @Override
 public void onInitialize() {
 
-    registerBlockAndItem("yourmodid", "ruby_ore", RUBY_ORE, YOURMOD_GROUP);
-    registerGeneratedItem("yourmodid", "ruby", RUBY);
+    RegistryHandler.registerBlockAndItem("yourmodid", "ruby_ore", RUBY_ORE, YOURMOD_GROUP);
+    RegistryHandler.registerGeneratedItem("yourmodid", "ruby", RUBY);
 }
 ```

@@ -80,7 +80,7 @@ yourmodidConfigLocked = true
 yourmodidResourceLocked = true
 
 # Enables the Ruby Ore block
-enableRubyOre = false
+enableRubyOre = true
 enableRubyItem = true
 ```
 
@@ -90,7 +90,26 @@ Interacting with your `yourmodid.properties` file can be done through the `Confi
 One of the available methods is `getBooleanOption()`, which returns the value of the specified property from the config file, or the default value if it isn't present.
 
 ```java
-if (getBooleanOption(YOURMOD_CONFIGS, "enableRubyOre", true)){
+if (ConfigHandler.getBooleanOption(YOURMOD_CONFIGS, "enableRubyOre", true)){
     // Do something 
+}
+```
+
+### Result
+
+Your code should now look something like this:
+
+```java title="MyMod.java"
+public static final ConfigBase YOURMOD_CONFIGS = new ConfigBase("yourmodid");
+
+@Override
+public void onInitialize() {
+
+    YOURMOD_CONFIGS.addProperty("enableRubyOre", true, "Enables the Ruby Ore block")
+        .registerProperties();
+
+    if (ConfigHandler.getBooleanOption(YOURMOD_CONFIGS, "enableRubyOre", true)){
+        // Do something 
+    }
 }
 ```

@@ -46,7 +46,18 @@ const sidebars = {
       },
       items: ['mods/compressor', 'mods/chassis', 'mods/utilities'],
     },
-    
+    {
+      type: 'category',
+      label: 'Chassis',
+      className: 'sidebar-chassis',
+      collapsed: false,
+      link: {
+        type: 'generated-index',
+        description: 'Documentation on the Chassis library',
+        slug: '/chassis',
+      },
+      items: ['chassis/premise', 'chassis/installation', 'chassis/blocks', 'chassis/items', 'chassis/configuration', 'chassis/resources'],
+    },
     {
       type: 'doc',
       id: 'support',
