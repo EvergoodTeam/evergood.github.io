@@ -9,7 +9,7 @@ slug: /chassis/items
 
 ---
 
-#### Item
+### Creating your Item
 
 Similarly to how a Block can be created, you can create an Item through the `ItemBase` class.  
 You can customize it through `FabricItemSettings()`.
@@ -19,7 +19,7 @@ public static final Item RUBY = new ItemBase(YOURMOD_GROUP);
 public static final Item YOURMOD_ITEM = new ItemBase(new FabricItemSettings());
 ```
 
-#### Registering
+### Registering
 
 Registering is done with the `RegistryHandler` class.
 
@@ -29,7 +29,7 @@ You can register your Item with `registerGeneratedItem()` if it represents a gen
 RegistryHandler.registerGeneratedItem("yourmodid", "ruby", RUBY);
 ```
 
-#### Result
+### Result
 
 Your code should now look something like this:
 

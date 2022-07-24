@@ -33,6 +33,7 @@ export default function Home() {
     <Layout>
       <div
         style={{
+          padding: '10px',
           display: 'flex',
           textAlign: 'center',
           justifyContent: 'center',

@@ -48,7 +48,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Chassis',
+      label: 'Chassis Documentation',
       className: 'sidebar-chassis',
       collapsed: false,
       link: {

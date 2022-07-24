@@ -9,7 +9,7 @@ slug: /chassis/blocks
 
 ---
 
-#### Block
+### Creating your Block
 
 Block objects can be created through the `BlockBase` class.  
 You can customize your Block from the ground up using `FabricBlockSettings`, or use the available methods with specific parameters.
@@ -26,9 +26,9 @@ public static final List<Block> BLOCKS = new ArrayList<>();
 public static final Block RUBY_ORE = new BlockBase(BLOCKS, Material.STONE, 2.5f, 7.0f, BlockSoundGroup.STONE);
 ```
 
-#### ItemGroup
+### ItemGroup
 
-With this Block we can create an `ItemGroup`, a.k.a. a Tab in the Creative menu, to which you can add all your additions.
+With this Block we can create an `ItemGroup`, a.k.a. a tab in the creative menu, to which you can add all your blocks and items.
 
 To do so we can utilize the the `ItemGroupBase` class.
 
@@ -36,7 +36,7 @@ To do so we can utilize the the `ItemGroupBase` class.
 public static final ItemGroup YOURMOD_GROUP = new ItemGroupBase("yourmodid", "itemgroup", RUBY_ORE).group;
 ```
 
-#### Registering
+### Registering
 
 Registering is done with the `RegistryHandler` class.
 
@@ -46,7 +46,7 @@ Now we can register this Block and give it an Item form that player can hold in 
 RegistryHandler.registerBlockAndItem("yourmodid", "ruby_ore", RUBY_ORE, YOURMOD_GROUP);
 ```
 
-#### Result
+### Result
 
 Your code should now look something like this:
 

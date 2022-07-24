@@ -58,7 +58,7 @@ YOURMOD_CONFIGS.addProperty("enableRubyOre", true, "Enables the Ruby Ore block")
 
 :::tip
 
-You can concatenate multiple `.addProperty()` and have the method `registerProperties()` at the end.
+You can concatenate multiple `addProperty()` and have the method `registerProperties()` at the end.
 
 ```java
 YOURMOD_CONFIGS.addProperty("enableRubyOre", true, "Enables the Ruby Ore block")
@@ -87,7 +87,7 @@ enableRubyItem = true
 ### Using properties
 
 Interacting with your `yourmodid.properties` file can be done through the `ConfigHandler` class.  
-One of the available methods is `getBooleanOption()`, which returns the value of the specified property from the config file, or the default value if it isn't present.
+One of the available methods is `getBooleanOption()`, which returns the Boolean value of the specified property from the config file, or the default value if it isn't present.
 
 ```java
 if (ConfigHandler.getBooleanOption(YOURMOD_CONFIGS, "enableRubyOre", true)){
