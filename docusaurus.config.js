@@ -78,6 +78,30 @@ const config = {
     ({
       metadata: [{name: 'keywords', content: 'minecraft, mod, modpack'}],
 
+      algolia: {
+        // The application ID provided by Algolia
+        appId: '8ZAWFQ1VKY',
+  
+        // Public API key: it is safe to commit it
+        apiKey: '6cfa7e3aa15ba2f5c56ef830ecc94b19',
+  
+        indexName: 'evergoodteam',
+  
+        // Optional: see doc section below
+        contextualSearch: true,
+  
+        // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
+        externalUrlRegex: 'external\\.com|domain\\.com',
+  
+        // Optional: Algolia search parameters
+        searchParameters: {},
+  
+        // Optional: path for search page that enabled by default (`false` to disable it)
+        searchPagePath: 'search',
+  
+        //... other Algolia params
+      },
+
       announcementBar: {
         content:
           'The Wiki and the Documentation on our projects are still a WIP',
