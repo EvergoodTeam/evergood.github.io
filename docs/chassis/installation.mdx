@@ -7,7 +7,7 @@ description: Setting up the basics to use Chassis
 slug: /chassis/installation
 ---
 
-Currently Chassis is only available for the **Fabric ModLoader**, so the following instructions will be focused on getting you started with your own Fabric project.
+Currently Chassis is only available for the **Fabric ModLoader**, so the following instructions will be focused on getting you started implementing the library into your Fabric project.
 This also means that we're dependent on the [**Fabric API**](https://www.curseforge.com/minecraft/mc-mods/fabric-api), so make sure it is included as a dependency in your project.
 
 A port to the **Forge ModLoader** will be coming in the future.
@@ -68,14 +68,27 @@ dependencies {
 ```
 
 Don't forget to change `<releaseVersion>` to an appropriate version, as explained **[before](#how-versions-work)**.  
-We recommend using `${project.chassis_version}` and specifying the version in your `gradle.properties` for easier access
+
+:::tip
+
+Use `${project.chassis_version}` and specify the version in your `gradle.properties`.
+
+:::
 
 ### `fabric.mod.json`
 
-In your `fabric.mod.json`, add Chassis as a dependency
+In your `fabric.mod.json`, add Chassis as a dependency. 
 
 ```json title="/src/main/resources/fabric.mod.json"
 "depends": {
-    "chassis": "1.x.x"
+    "chassis": "<releaseVersion>"
 },
 ```
+
+Don't forget to change `<releaseVersion>` to an appropriate version, as explained **[before](#how-versions-work)**.  
+
+:::tip
+
+You can set the last version digit to be `x` (eg. `1.2.x`) to include a whole version group!
+
+:::
