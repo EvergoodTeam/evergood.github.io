@@ -3,6 +3,9 @@ import {Request} from 'react-axios';
 import CodeBlock from '@theme/CodeBlock';
 import Details from '../theme/Details/index';
 
+// TODO: have single changelog file per project, add separators between each update
+// + have proper markdown (links etc.) support with maybe codeblock font?
+
 // First solution was https://emgithub.com/ , but it wasn't playing nicely with dark and light theme
 export default function Changelog({ project, version }) {
 
