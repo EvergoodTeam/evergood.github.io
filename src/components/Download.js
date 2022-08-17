@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import React from 'react';
 import Markdown from 'react-markdown';
 
 export default function Download({ type, project }) {
