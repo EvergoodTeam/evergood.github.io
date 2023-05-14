@@ -133,6 +133,12 @@ const config = {
             position: 'left'
           },
           {
+            className: "header-modrinth-link",
+            "aria-label": "",
+            href: 'https://modrinth.com/user/Libra',
+            position: 'right',
+          },
+          {
             className: "header-curse-link",
             "aria-label": "",
             href: 'https://www.curseforge.com/members/evergoodteam/projects',
