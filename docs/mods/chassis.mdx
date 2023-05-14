@@ -23,9 +23,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 import Changelog from '@site/src/components/Changelog';
-import Download from '@site/src/components/Download';
 import Source from '@site/src/components/Source';
-
 import Image from '@theme/IdealImage';
 
 <Image img={require('@site/static/img/chassisBanner.png')} />
@@ -75,7 +73,10 @@ Requirements:
 
 ## 📥 Downloads {#downloads}
 
-<Download type ="mc-mods" project = "chassis"></Download>
+import { Curseforge } from '@site/src/components/Download';
+import { Modrinth } from '@site/src/components/Download';
+
+<div style={{textAlign: 'center', margin: '2rem'}}><Curseforge type ="mc-mods" project = "chassis"/><Modrinth type="mod" project="chassis"/></div>
 
 ## 🗂️ License {#license}
 
