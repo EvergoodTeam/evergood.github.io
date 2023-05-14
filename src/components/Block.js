@@ -8,16 +8,17 @@ export default function Block({ row, col }) {
 
     const sprite = {
         background: 'url(/utils/compressorSprite.png)',
+        filter: 'drop-shadow(0 0 2px #464649)',
         display: 'inline-block',
+        marginBottom: '1px',
         verticalAlign: 'middle',
         backgroundSize: square,
         height: size,
-        width: size
+        width: size,
+        backgroundPosition: itemCoords
     }
 
-    const item = { backgroundPosition: itemCoords }
-
     return (
-        <span style = {{padding: '5px'}}><span style={Object.assign({}, sprite, item)}/></span>
+        <span style = {{padding: '5px', class: 'item shadow--tl'}}><span style={sprite}/></span>
     );
 }
