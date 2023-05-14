@@ -33,7 +33,6 @@ export default function Home() {
     <Layout>
       <div
         style={{
-          padding: '10px',
           display: 'flex',
           textAlign: 'center',
           justifyContent: 'center',
@@ -41,8 +40,15 @@ export default function Home() {
           height: '50vh',
           fontSize: '20px',
         }}>
-        <div className="shadow--tl alert alert--warning" role="alert">
-          There isn't much here yet, so you should check out the <Link className="button button--lg button--outline button--primary" to="/docs">Docs</Link>
+        <div style={{width: '50rem'}} className="card shadow--tl">
+          <div class="card__body">
+            <p>
+              There isn't much in this landing page...
+            </p>
+          </div>
+          <div class="card__footer">
+            <a class="button button--lg button--outline button--primary" href="/docs">Read the Docs</a>
+          </div>
         </div>
       </div>
     </Layout>
