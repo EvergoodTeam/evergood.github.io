@@ -8,7 +8,7 @@ function card(site, link) {
         verticalAlign: 'middle',
         marginInline: '.75rem',
         width: '18rem'
-    }} className="card shadow--tl">
+    }} className="card card-button">
         <div className="card__header">
             <span className={'download-' + site} />
         </div>

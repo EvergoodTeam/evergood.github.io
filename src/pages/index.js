@@ -40,15 +40,18 @@ export default function Home() {
           height: '50vh',
           fontSize: '20px',
         }}>
-        <div style={{width: '50rem'}} className="card shadow--tl">
-          <div class="card__body">
-            <p>
-              There isn't much in this landing page...
-            </p>
-          </div>
-          <div class="card__footer">
-            <a class="button button--lg button--outline button--primary" href="/docs">Read the Docs</a>
-          </div>
+        <div style={{ width: '30rem' }}>
+          <p>There isn't much in this landing page...</p>
+          
+            <div style={{ display: 'inline-block', width: '17rem', marginInline: '1.2rem' }} className="card card-button" id='main'>
+            <a style = {{textDecoration:'none'}} href="/docs"><div className="card__body">
+                <span style={{
+                  color: 'var(--ifm-color-secondary)',
+                  textShadow: '0 1px 0 rgba(0, 0, 0, 0.4)'
+                }}>Read the Docs</span>
+              </div></a>
+            </div>
+          
         </div>
       </div>
     </Layout>
