@@ -159,7 +159,7 @@ const config = {
           {
             className: "header-github-link",
             "aria-label": "",
-            href: 'https://github.com/EvergoodTeam/evergoodteam.github.io',
+            href: 'https://github.com/EvergoodTeam',
             position: 'right',
           },
         ],
