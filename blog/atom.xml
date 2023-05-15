@@ -9,7 +9,7 @@
     <icon>https://evergoodteam.github.io/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
-        <id>welcome-blog-post</id>
+        <id>https://evergoodteam.github.io/blog/welcome-blog-post</id>
         <link href="https://evergoodteam.github.io/blog/welcome-blog-post"/>
         <updated>2022-07-18T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Have a great day]]></summary>
