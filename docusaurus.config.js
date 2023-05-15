@@ -174,6 +174,14 @@ const config = {
                 label: 'Introduction',
                 to: '/docs',
               },
+              {
+                label: 'Mods',
+                to: '/docs/mods',
+              },
+              {
+                label: 'Modpacks',
+                to: '/docs/modpacks',
+              },
             ],
           },
           {
@@ -185,11 +193,7 @@ const config = {
               },*/
               {
                 label: 'Discord',
-                href: 'https://discord.gg/k2P68Y8',
-              },
-              {
-                label: 'Curseforge',
-                href: 'https://bit.ly/evergoodproject',
+                href: 'https://discord.com',
               },
               {
                 label: 'Crowdin',
@@ -211,7 +215,7 @@ const config = {
               {
                 label: 'Support Us',
                 to: 'docs/support',
-              },
+              }
             ],
           },
         ],
