@@ -1,19 +1,18 @@
 import React from 'react';
-import Markdown from 'react-markdown';
 
 // Have download counter
 
 function card(site, link) {
-    return (<div style={{
-        //backgroundColor: '#00AF5C',
+    return (<a href={link}><div style={{
         display: 'inline-block',
+        verticalAlign: 'middle',
         marginInline: '.75rem',
         width: '18rem'
-    }} class="card shadow--tl">
-        <div class="card__header">
-            <a href={link}><span className={'download-' + site} /></a>
+    }} className="card shadow--tl">
+        <div className="card__header">
+            <span className={'download-' + site} />
         </div>
-    </div>);
+    </div></a>);
 
     /** <div class="card__body">
             <Markdown components={{ p: React.Fragment }} children={markdown}/>
@@ -31,12 +30,10 @@ function card(site, link) {
 
 export function Curseforge({ type, project }) {
     var link = "https://www.curseforge.com/minecraft/" + type + "/" + project;
-    var markdown = "Download over at [**CurseForge**](" + link + ")";
     return (card("curseforge", link));
 }
 
 export function Modrinth({ type, project }) {
     var link = "https://modrinth.com/" + type + "/" + project;
-    var markdown = "Download over at [**Modrinth**](" + link + ")";
     return (card("modrinth", link));
 }
