@@ -229,6 +229,11 @@ const config = {
         darkTheme: darkCodeTheme,
         additionalLanguages: ['groovy', 'java'],
       },
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: false,
+        respectPrefersColorScheme: true,
+      },
     }),
 };
 
