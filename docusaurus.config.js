@@ -30,6 +30,9 @@ const config = {
     locales: ['en'],
   },
 
+  customFields: {
+  },
+
   plugins: [
     [
       require.resolve('@docusaurus/plugin-ideal-image'),
@@ -40,7 +43,7 @@ const config = {
         steps: 2, // the max number of images generated between min and max (inclusive)
         disableInDev: false,
       },
-    ],
+    ]
   ],
 
   presets: [
@@ -104,7 +107,7 @@ const config = {
 
       announcementBar: {
         content:
-          'The Wiki and the Documentation on our projects are still a WIP',
+          '🚧 The documentation and the wiki as a whole is still a WIP 🚧',
         backgroundColor: '#fafbfc',
         textColor: '#091E42',
         isCloseable: true,

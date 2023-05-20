@@ -53,15 +53,15 @@ The documentation for utilizing Chassis in your own project can be found [**here
 
 <Tabs className="chassis-tabs">
     <TabItem value="1.2.3" label="1.2.3 (1.19.2)" default>
-        <Changelog project="chassis" version="1.2.3"/>
+        <Changelog type="mods" project="chassis" version="1.2.3"/>
     </TabItem>
     <TabItem value="1.2.x" label="1.2.x (1.19.x)">
-        <Changelog project="chassis" version="1.2.2"/>
-        <Changelog project="chassis" version="1.2.1"/>
-        <Changelog project="chassis" version="1.2.0"/>
+        <Changelog type="mods" project="chassis" version="1.2.2"/>
+        <Changelog type="mods" project="chassis" version="1.2.1"/>
+        <Changelog type="mods" project="chassis" version="1.2.0"/>
     </TabItem>
     <TabItem value="1.1.x" label="1.1.x (1.18.2)">
-        <Changelog project="chassis" version="1.1.0"/>
+        <Changelog type="mods" project="chassis" version="1.1.0"/>
     </TabItem>
     <TabItem value="1.0.x" label="1.0.x (1.18.1)">
     </TabItem>
@@ -78,7 +78,7 @@ Requirements:
 import { Curseforge } from '@site/src/components/Download';
 import { Modrinth } from '@site/src/components/Download';
 
-<div style={{textAlign: 'center', margin: '2rem'}}><Curseforge type ="mc-mods" project = "chassis"/><Modrinth type="mod" project="chassis"/></div>
+<div className = 'download-div'><Curseforge type ="mc-mods" project = "chassis"/><Modrinth type="mod" project="chassis"/></div>
 
 ## 🗂️ License {#license}
 
