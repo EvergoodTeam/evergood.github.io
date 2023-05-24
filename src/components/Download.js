@@ -1,13 +1,12 @@
 import React from 'react';
 
-// Have download counter
-
 function card(site, link) {
-    return (<a href={link}><div className="card card-button">
-        <div className="card__header">
-            <span className={'download-' + site} />
-        </div>
-    </div></a>);
+    return (
+        <a href={link}><div className="card card-button">
+            <div className="card__header">
+                <span className={'download-' + site} />
+            </div>
+        </div></a>);
 }
 
 export function Curseforge({ type, project }) {
