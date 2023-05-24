@@ -24,18 +24,6 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Modpacks',
-      className: 'sidebar-modpacks',
-      collapsed: false,
-      link: {
-        type: 'generated-index',
-        description: '📦 Modpacks, hundreds of mods gathered and configured to work with each other',
-        slug: '/modpacks',
-      },
-      items: ['modpacks/evergood', 'modpacks/reforged', 'modpacks/refabricated'],
-    },
-    {
-      type: 'category',
       label: 'Mods',
       className: 'sidebar-mods',
       collapsed: false,
@@ -56,7 +44,19 @@ const sidebars = {
         description: 'Documentation on the Chassis library',
         slug: '/chassis',
       },
-      items: ['chassis/premise', 'chassis/installation', 'chassis/blocks', 'chassis/items', 'chassis/configuration', 'chassis/resources'],
+      items: ['chassis/premise', 'chassis/installation', 'chassis/blocks', 'chassis/items', 'chassis/configuration', 'chassis/resources', 'chassis/providers'],
+    },
+    {
+      type: 'category',
+      label: 'Modpacks',
+      className: 'sidebar-modpacks',
+      collapsed: false,
+      link: {
+        type: 'generated-index',
+        description: '📦 Modpacks, hundreds of mods gathered and configured to work with each other',
+        slug: '/modpacks',
+      },
+      items: ['modpacks/evergood', 'modpacks/reforged', 'modpacks/refabricated'],
     },
     {
       type: 'doc',
