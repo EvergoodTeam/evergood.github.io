@@ -1,7 +1,7 @@
 import React from 'react';
 import { Request } from 'react-axios';
 import Details from '../theme/Details/index';
-import dates from '../util/changelogs.json'
+import dates from '../util/storage.json'
 import Markdown from 'react-markdown';
 
 // First solution was https://emgithub.com/ , but it wasn't playing nicely with dark and light theme
