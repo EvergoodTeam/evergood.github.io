@@ -31,6 +31,7 @@ const config = {
   },
 
   customFields: {
+    CURSE_API: process.env.CURSE_API
   },
 
   plugins: [
@@ -107,7 +108,7 @@ const config = {
 
       announcementBar: {
         content:
-          '🚧 The documentation and the wiki as a whole is still a WIP 🚧',
+          '🚧 Wiki and the documentation are still a WIP 🚧',
         backgroundColor: '#fafbfc',
         textColor: '#091E42',
         isCloseable: true,
@@ -122,49 +123,61 @@ const config = {
         },
         hideOnScroll: false,
         items: [
+          /*
           {
             className: "header-label",
             type: 'doc',
             docId: 'introduction',
-            position: 'left',
+            position: 'right',
             label: 'Docs',
           },
           {
             className: "header-label",
             to: '/blog',
             label: 'Blog',
-            position: 'left'
+            position: 'right'
+          },
+          */
+          {
+            type: 'search',
+            position: 'left',
           },
           {
-            className: "header-modrinth-link",
+            className: "header-link header-github-link ",
+            "title": "GitHub",
+            "aria-label": "",
+            href: 'https://github.com/EvergoodTeam',
+            position: 'right',
+          },
+          {
+            className: "header-link header-modrinth-link ",
+            "title": "Modrinth",
             "aria-label": "",
             href: 'https://modrinth.com/user/Libra',
             position: 'right',
           },
           {
-            className: "header-curse-link",
+            className: "header-link header-curse-link ",
+            "title": "CurseForge",
             "aria-label": "",
             href: 'https://www.curseforge.com/members/evergoodteam/projects',
             position: 'right',
           },
           {
-            className: "header-crowdin-link",
-            "aria-label": "",
-            href: 'https://crowdin.com/profile/EvergoodTeam',
-            position: 'right',
-          },
-          {
-            className: "header-discord-link",
+            className: "header-link header-discord-link ",
+            "title": "Discord",
             "aria-label": "",
             href: 'https://discord.gg/k2P68Y8',
             position: 'right',
           },
           {
-            className: "header-github-link",
+            className: "header-link header-crowdin-link ",
+            "title": "Crowdin",
             "aria-label": "",
-            href: 'https://github.com/EvergoodTeam',
+            href: 'https://crowdin.com/profile/EvergoodTeam',
             position: 'right',
           },
+          
         ],
       },
       footer: {

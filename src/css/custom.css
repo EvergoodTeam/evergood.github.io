@@ -31,20 +31,33 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-
+/* Sidebar */
+/* Separator */
+.sidebar-category-separator {
+  margin-inline: calc(var(--ifm-menu-link-padding-horizontal) + 10px);
+  margin-bottom: .5rem;
+  margin-top: .75rem;
+  height: 1px;
+  background: var(--ifm-menu-color-background-active);
+}
 
 /* Navbar */
+.navbar--fixed-top {
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.05), 0px 7px 13px -3px rgba(0, 0, 0, 0.02);
+}
+
 .evergood-navbar-logo:hover {
-  filter: brightness(85%);
+  opacity: .8; 
 }
 
 
 /* Community icons */
-.header-github-link:hover, .header-discord-link:hover, .header-curse-link:hover, .header-crowdin-link:hover, .header-modrinth-link:hover {
+.header-link:hover {
   opacity: 0.8;
 }
 
-.header-github-link:before, .header-discord-link:before, .header-curse-link:before, .header-crowdin-link:before, .header-modrinth-link:before {
+.header-link:before {
+  margin-inline: .25rem;
   content: "";
   display: flex;
   height: 24px;
