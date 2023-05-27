@@ -43,14 +43,27 @@ function NavbarContentLayout({ left, right }) {
     </div>
   );
 }
+
+import { useLocation } from "react-router-dom";
+
 export default function NavbarContent() {
   const mobileSidebar = useNavbarMobileSidebar();
   const items = useNavbarItems();
-  const mobile = window.innerWidth <= 996;
-  const index = window.location.pathname === '/';
+
+  const [width, setWidth] = React.useState('');
+
+  React.useEffect(() => {
+    window.addEventListener('resize', setWidth(window.innerWidth));
+    return () => {
+      window.removeEventListener('resize', setWidth(window.innerWidth));
+    }
+  }, []);
+
+  const mobile = width <= 996;
+  const index = useLocation().pathname === '/';
 
   if (index && items.length == 6) items.shift(); // Remove search bar
-  
+
   const [leftItems, rightItems] = splitNavbarItems(items);
   const searchBarItem = items.find((item) => item.type === 'search');
 
