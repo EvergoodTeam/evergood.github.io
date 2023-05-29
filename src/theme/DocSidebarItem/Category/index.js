@@ -68,6 +68,9 @@ function CollapseButton({ categoryLabel, onClick }) {
     />
   );
 }
+
+import { Iconify } from '@site/src/components/Icon';
+
 export default function DocSidebarItemCategory({
   item,
   onItemClick,
@@ -156,6 +159,7 @@ export default function DocSidebarItemCategory({
             aria-expanded={collapsible ? !collapsed : undefined}
             href={collapsible ? hrefWithSSRFallback ?? '#' : hrefWithSSRFallback}
             {...props}>
+            <Iconify>{(item.customProps != undefined) ? item.customProps.badge : undefined}</Iconify>
             {label}
           </Link>
           {href && collapsible && (

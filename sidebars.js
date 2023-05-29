@@ -21,6 +21,9 @@ const sidebars = {
       type: 'doc',
       id: 'introduction',
       className: 'sidebar-intro',
+      customProps: {
+        badge: 'ph:chats',
+      },
     },
     {
       type: 'category',
@@ -33,6 +36,9 @@ const sidebars = {
         slug: '/mods',
       },
       items: ['mods/compressor', 'mods/chassis', 'mods/utilities'],
+      customProps: {
+        badge: 'ph:puzzle-piece',
+      },
     },
     {
       type: 'category',
@@ -45,6 +51,9 @@ const sidebars = {
         slug: '/chassis',
       },
       items: ['chassis/premise', 'chassis/installation', 'chassis/blocks', 'chassis/items', 'chassis/configuration', 'chassis/resources', 'chassis/providers'],
+      customProps: {
+        badge: 'ph:book-bookmark',
+      },
     },
     {
       type: 'category',
@@ -57,11 +66,17 @@ const sidebars = {
         slug: '/modpacks',
       },
       items: ['modpacks/evergood', 'modpacks/reforged', 'modpacks/refabricated'],
+      customProps: {
+        badge: 'ph:package',
+      }
     },
     {
       type: 'doc',
       id: 'support',
       className: 'sidebar-support',
+      customProps: {
+        badge: 'ph:hand-heart',
+      }
     },
   ],
 };

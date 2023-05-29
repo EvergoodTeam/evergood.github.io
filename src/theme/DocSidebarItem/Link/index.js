@@ -6,6 +6,9 @@ import Link from '@docusaurus/Link';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 import IconExternalLink from '@theme/Icon/ExternalLink';
 import styles from './styles.module.css';
+
+import { Iconify } from '@site/src/components/Icon';
+
 export default function DocSidebarItemLink({
   item,
   onItemClick,
@@ -44,6 +47,7 @@ export default function DocSidebarItemLink({
             onClick: onItemClick ? () => onItemClick(item) : undefined,
           })}
           {...props}>
+          <Iconify>{(item.customProps != undefined) ? item.customProps.badge : undefined}</Iconify>
           {label}
           {!isInternalLink && <IconExternalLink />}
         </Link>
