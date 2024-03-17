@@ -1,0 +1,156 @@
+---
+sidebar_label: 'Resources / Assets'
+sidebar_position: 4
+
+id: resources
+title: Resources / Assets
+description: Giving our blocks and items assets, localization, tags, textures
+slug: /chassis/resources
+
+---
+
+:::caution
+
+As of `1.2.3`, this is outdated. Refer to [this test class](https://github.com/EvergoodTeam/Chassis/blob/1.19.2/src/main/java/evergoodteam/chassis/ChassisTestFeatures.java) instead for the time being.
+
+:::
+
+With Chassis you can generate asset files (blockstates, models, lang, textures, tags) through code, without having to experience the pain of creating 5 different files for each block/item you make.
+
+This can be done in 2 ways: 
+- through a [**ResourcePack**](#creating-a-resourcepack), which has the benefit of being able to hold all sorts of assets
+- through [**injection**](#injection), which is limited to only block models and recipes, but can be faster than creating a ResourcePack.
+
+## Creating a ResourcePack
+
+To start, you will first need to create a `ResourcePackBase` object, which will generate those assets in your config folder.  
+
+```java
+public static final ResourcePackBase YOURMOD_RESOURCES = new ResourcePackBase(YOURMOD_CONFIGS, "yourmodid");
+```
+
+This will also create a **ResourcePack**, visibile from the appropriate menu in-game. You can customize it by adding an URL with an image to use as the icon and a hex color to customize the description's color.
+
+```java
+public static final ResourcePackBase YOURMOD_RESOURCES = new ResourcePackBase(YOURMOD_CONFIGS, "yourmodid", 
+    "https://evergoodteam.github.io/utils/icons/chassisIcon.png", 
+    "53a074");
+```
+
+To customize the description you can add the entries listed here to your language file:
+
+```json title="en_us.lang"
+{
+  "yourmodid.metadata.description": "My beatiful assets",
+  "pack.source.yourmodid": "My beatiful assets"
+}
+```
+
+Here is an example of how it can look in-game:
+
+![](/img/chassisResourcePack.png)
+
+You can hide it from the menu using the `hide()` method.
+
+```java
+YOURMOD_RESOURCES.hide();
+```
+
+### Creating assets
+
+Through your `ResourcePackBase` object you can add assets, such as:
+- Global Tags (useful for recipes)
+- Blockstates
+- Models
+- Drop LootTables (specify what a block drops when mined)
+- Required tool Tags (tool required to mine a block)
+- Mining level Tags (tool tier required to mine a block)
+- Textures
+- Language files
+
+You can see these options by checking out the [`ResourcePackBase` class](https://github.com/EvergoodTeam/Chassis/blob/1.19/src/main/java/evergoodteam/chassis/objects/resourcepacks/ResourcePackBase.java)
+
+Here is an example from the [Chassis source code](https://github.com/EvergoodTeam/Chassis):
+```java
+CHASSIS_RESOURCES.createGlobalTag("testblock")
+                .createBlockstate("testblock")
+                .createBlockModels("testblock", "testblock", "all")
+                .createBlockDropLootTable("testblock")
+                .createRequiredToolTag("pickaxe", new String[]{"testblock"})
+                .createMiningLevelTag("stone", new String[]{"testblock"})
+                .createTexture(true, "https://i.imgur.com/BAStRdD.png", "testblock") // Truly a legendary URL
+
+                .createItemModel("testitem", "testitem")
+                .createTexture(false, "https://i.imgur.com/BAStRdD.png", "testitem")
+
+                .createLang("en_us", new HashMap<>() {{
+                    put("block.chassis.testblock", "Test Block");
+                    put("item.chassis.testitem", "Test Item");
+                    put("itemGroup.chassis.testgroup", "Test Group");
+                }});
+```
+
+### Result
+
+Your code should now look something like this:
+
+```java title="MyMod.java"
+public static final ResourcePackBase YOURMOD_RESOURCES = new ResourcePackBase(YOURMOD_CONFIGS, "yourmodid");
+
+@Override
+public void onInitialize() {
+
+    YOURMOD_RESOURCES.createGlobalTag("rubyblock")
+        .createBlockstate("rubyblock")
+        .createBlockModels("rubyblock", "rubyblock", "all");
+}
+```
+
+## Injection
+
+Injection is done through the `InjectionHandler` class and the methods it provides.  
+You may use it in conjunction with a **ResourcePack** that doesn't worry about models and recipes.
+
+### Block models
+
+To have all the blocks from your mod supplied with block models, you can use the `addModelInjection()` method.
+
+```java
+InjectionHandler.addModelInjection("yourmodid");
+```
+
+If you want a block to behave like a column texture-wise (see Basalt), you can specify the type with the method `InjectionHandler.addColumnType()`.
+
+```java
+InjectionHandler.addColumnType("basalt");
+```
+
+### Recipes
+
+Adding a recipe first requires a `JsonObject`, which contains all the information needed in the json format.  
+You can create a recipe json through the `RecipeJson` class, which provides methods for shaped and shapeless recipes, as well as 3x3 and ring shapes.
+
+To now create the recipe we can use the `addRecipe()` method:
+
+```java
+InjectionHandler.addRecipe("yourmodid", "rubyblock", 
+    RecipeJson.create3x3RecipeJson("item", 
+        new Identifier("yourmodid", "ruby"), 
+        new Identifier("yourmodid", "rubyblock"), 
+    1));
+```
+
+### Result
+
+Your code should now look something like this:
+
+```java title="MyMod.java"
+@Override
+public void onInitialize() {
+
+    InjectionHandler.addColumnType("basalt");
+    InjectionHandler.addModelInjection("yourmodid");
+    
+    InjectionHandler.addRecipe("yourmodid", "rubyblock", RecipeJson.create3x3RecipeJson("item", new Identifier("yourmodid", "ruby"), new Identifier("yourmodid", "rubyblock"), 1));
+}
+```

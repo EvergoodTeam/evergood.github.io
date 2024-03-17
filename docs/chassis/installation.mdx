@@ -1,0 +1,94 @@
+---
+sidebar_label: "Installation"
+
+id: installation
+title: Installation
+description: Setting up the basics to use Chassis
+slug: /chassis/installation
+---
+
+Currently Chassis is only available for the **Fabric ModLoader**, so the following instructions will be focused on getting you started implementing the library into your Fabric project.
+This also means that we're dependent on the [**Fabric API**](https://www.curseforge.com/minecraft/mc-mods/fabric-api), so make sure it is included as a dependency in your project.
+
+A port to the **Forge ModLoader** will be coming in the future.
+
+### Requirements
+
+- Java 17+
+- [**Fabric API**](https://www.curseforge.com/minecraft/mc-mods/fabric-api)
+
+### How our versions work
+
+:::note
+
+This version system could be changed in the near future
+
+:::
+
+[GitHub Releases](https://github.com/EvergoodTeam/Chassis/releases) include different Builds of the project, spanning
+from those in active development to final ones.
+
+Each version name is composed of two main parts: a **version number** (`1.2.34`) and a **
+suffix** (`-suffix`).
+
+Different **suffixes** are used to highlight the nature and state of a Build:
+
+- `-dev`: in active development, likely unstable and temporary.
+- `-rc`: release candidates, in the final stages of development, next to being finalised and released officially.
+- _no suffix_: final releases, can be found on [Curseforge](https://www.curseforge.com/minecraft/mc-mods/chassis) and as a [GitHub Release](https://github.com/EvergoodTeam/Chassis/releases).
+
+**Version numbers** are grouped together based on Minecraft's Versions: this
+means that Builds from the same group are compatible only with that specific Minecraft
+Version and that they're interchangeable with one another.
+
+The table below summarizes the supported Minecraft Versions
+
+| Minecraft Version | `1.12.2` | `1.18.1` | `1.18.2` | `1.19.x`  |
+| :---------------: | :------: | :------: | :------: | :-----: |
+|      Support      |    🚧    |    ✔️    |    ✔️    |   ✔️    |
+|  Chassis Version  |    🚧    | `1.0.x`  | `1.1.x`  | `1.2.x` |
+| Fabric ModLoader  |    ❌    |    ✔️    |    ✔️    |   ✔️    |
+|  Forge ModLoader  |    🚧    |    ❔    |    ❔    |   ❔    |
+
+### `build.gradle`
+
+In your `build.gradle`, add Chassis as a dependency using JitPack
+
+```groovy title="build.gradle"
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+```
+
+```groovy title="build.gradle"
+dependencies {
+    //Chassis
+    modImplementation 'com.github.evergoodteam:chassis:<releaseVersion>'
+}
+```
+
+Don't forget to change `<releaseVersion>` to an appropriate version, as explained **[before](#how-versions-work)**.  
+
+:::tip
+
+Use `${project.chassis_version}` and specify the version in your `gradle.properties`.
+
+:::
+
+### `fabric.mod.json`
+
+In your `fabric.mod.json`, add Chassis as a dependency. 
+
+```json title="/src/main/resources/fabric.mod.json"
+"depends": {
+    "chassis": "<releaseVersion>"
+},
+```
+
+Don't forget to change `<releaseVersion>` to an appropriate version, as explained **[before](#how-versions-work)**.  
+
+:::tip
+
+You can set the last version digit to be `x` (eg. `1.2.x`) to include a whole version group!
+
+:::
