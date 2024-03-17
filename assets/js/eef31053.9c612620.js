@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkevergood_docs=self.webpackChunkevergood_docs||[]).push([[48],{6038:(e,t,r)=>{r.r(t),r.d(t,{default:()=>s});var c=r(7294),n=r(1514);function s(){return c.createElement(n.Z,null,c.createElement("meta",{"http-equiv":"refresh",content:"0; URL=https://discord.gg/k2P68Y8"}))}}}]);
