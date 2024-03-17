@@ -188,15 +188,15 @@ const config = {
             items: [
               {
                 label: "Introduction",
-                to: "/docs",
+                to: "/",
               },
               {
                 label: "Mods",
-                to: "/docs/mods",
+                to: "/mods",
               },
               {
                 label: "Modpacks",
-                to: "/docs/modpacks",
+                to: "/modpacks",
               },
             ],
           },
@@ -231,7 +231,7 @@ const config = {
               },
               {
                 label: "Support Us",
-                to: "docs/support",
+                to: "/support",
               },
             ],
           },
