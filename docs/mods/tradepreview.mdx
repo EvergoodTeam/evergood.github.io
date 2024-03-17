@@ -1,0 +1,80 @@
+---
+sidebar_label: "Trade Preview"
+sidebar_position: 0
+
+id: tradepreview
+title: Trade Preview
+description: 🔎 Check villager's trades without opening their inventory
+slug: /docs/mods/tradepreview
+---
+
+<head>
+  <meta content="Trade Preview" property="og:title" />
+  <meta content="Evergood Team" property="og:site_name" />
+  <meta
+    content="🔎 Check villager's trades without opening their inventory"
+    property="og:description"
+  />
+  <meta
+    content="https://evergoodteam.github.io/docs/mods/tradepreview"
+    property="og:url"
+  />
+  <meta
+    content="https://evergoodteam.github.io/img/tradePreviewIcon.png"
+    property="og:image"
+  />
+  <meta content="#937fb8" data-react-helmet="true" name="theme-color" />
+  <meta name="twitter:card" content="app" />
+</head>
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+import Changelog from "@site/src/components/Changelog";
+import Source from "@site/src/components/Source";
+import Image from "@theme/IdealImage";
+
+<Image img={require("@site/static/img/tradePreviewBanner.png")} />
+
+## 📑 Description {#description}
+
+Check all the trades a villager has to offer from the press of a key without having to open their inventory, all of this with a highly configurable overlay!
+
+- You can move around the overlay by pressing the assigned key (<code>M</code> by default)
+- You can scroll through the offered enchanted items with the assigned keys (<code>UP</code> and <code>DOWN</code> arrows by default) or use the scroll wheel!
+- Enchanted books have their names displayed automatically, removing the need to scroll through them
+- You can change the colours used (for the container and enchanted item selection) from the configs menu
+- All of the keys can be configured in the options menu
+
+Currently only available for the **Fabric ModLoader**.
+
+<Source project="TradePreview"></Source>
+
+## 📰 Changelogs {#changelogs}
+
+<Tabs className="tradepreview-tabs">
+  <TabItem value="1.0.0" label="1.0.0 (1.20)">
+    <Changelog type="mods" project="tradepreview" version="1.0.0" />
+  </TabItem>
+</Tabs>
+
+## 🔧 Installation {#installation}
+
+Requirements:
+
+- [**Fabric ModLoader**](https://fabricmc.net/)
+- [**Chassis**](./chassis.mdx) library
+
+## 📥 Downloads {#downloads}
+
+import { Curseforge } from "@site/src/components/Download";
+import { Modrinth } from "@site/src/components/Download";
+
+<div className="download-div">
+  <Curseforge type="mc-mods" project="tradepreview" />
+  <Modrinth type="mod" project="tradepreview" />
+</div>
+
+## 🗂️ License {#license}
+
+[GNU Lesser General Public License v2.1](https://github.com/EvergoodTeam/TradePreview/blob/1.18.1/LICENSE)

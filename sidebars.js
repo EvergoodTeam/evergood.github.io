@@ -22,7 +22,7 @@ const sidebars = {
       id: 'introduction',
       className: 'sidebar-intro',
       customProps: {
-        badge: 'ph:chats',
+        badge: 'material-symbols:brightness-alert-outline-rounded',
       },
     },
     {
@@ -35,14 +35,14 @@ const sidebars = {
         description: '🪛 Additions to and modifications of the vanilla game',
         slug: '/mods',
       },
-      items: ['mods/compressor', 'mods/chassis', 'mods/utilities'],
+      items: ['mods/tradepreview', 'mods/compressor', 'mods/chassis', 'mods/utilities'],
       customProps: {
-        badge: 'ph:puzzle-piece',
+        badge: 'material-symbols:memory',
       },
     },
     {
       type: 'category',
-      label: 'Chassis Documentation',
+      label: 'Chassis Documentation (OUTDATED)',
       className: 'sidebar-chassis',
       collapsed: false,
       link: {
@@ -50,9 +50,9 @@ const sidebars = {
         description: 'Documentation on the Chassis library',
         slug: '/chassis',
       },
-      items: ['chassis/premise', 'chassis/installation', 'chassis/blocks', 'chassis/items', 'chassis/configuration', 'chassis/resources', 'chassis/providers'],
+      items: ['chassis/premise', 'chassis/installation', 'chassis/blocks', 'chassis/items', 'chassis/configuration', 'chassis/resources'],
       customProps: {
-        badge: 'ph:book-bookmark',
+        badge: 'material-symbols:book-2-outline-rounded',
       },
     },
     {
@@ -67,7 +67,7 @@ const sidebars = {
       },
       items: ['modpacks/evergood', 'modpacks/reforged', 'modpacks/refabricated'],
       customProps: {
-        badge: 'ph:package',
+        badge: 'material-symbols:package-2-outline',
       }
     },
     {
@@ -75,7 +75,7 @@ const sidebars = {
       id: 'support',
       className: 'sidebar-support',
       customProps: {
-        badge: 'ph:hand-heart',
+        badge: 'material-symbols:heart-plus',
       }
     },
   ],

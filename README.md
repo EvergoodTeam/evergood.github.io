@@ -2,7 +2,7 @@
 
 Site with useful information about the Evergood projects (mods, modpacks and the associated documentation) and the required assets for both the projects and project pages on CurseForge and Modrinth.
 
-Currently running on [🦖 Docusaurus](https://docusaurus.io/) 2.4.0 with some modified components.
+Currently running on [🦖 Docusaurus](https://docusaurus.io/) 3.1.1 with some modified components.
 
 ### ⚠️ Disclaimer
 
