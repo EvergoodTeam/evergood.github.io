@@ -1,5 +1,5 @@
-import React from 'react';
-import { Request } from 'react-axios';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import Details from '../theme/Details/index';
 import dates from '../util/storage.json'
 import Markdown from 'react-markdown';
@@ -12,27 +12,31 @@ export default function Changelog({ type, project, version }) {
     var day = dates[type][project][urlVersion];
     if (day == null) day = "N/A";
 
-    /*
-    const [date, setDate] = React.useState('');
-    React.useEffect(() => {
-        let isMounted = true;
-        database.getProject(type, project, version)
-            .then(date => {
-                if (isMounted) setDate(date)})
-        return () => { isMounted = false }
-    }, [])*/
+    const [changelog, setChangelog] = useState('');
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(sourceUrl);
+                setChangelog(response.data); // Assuming the response contains the string data
+                setLoading(false);
+            } catch (error) {
+                setError(error);
+                setLoading(false);
+        }
+        };
+
+        fetchData();
+    }, []);
+
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>Error: {error.message}</div>;
 
     return (
-        // node_modules\@docusaurus\theme-common\src\components\Details\index.tsx
         <Details summary={<summary><em><strong>{version}</strong> - {day}</em></summary>}>
-            <Request url={sourceUrl}>
-                {(error, response, isLoading, makeRequest, axios) => {
-                    if (response != null) {
-                        return (<div><Markdown children={response.data} /></div>);
-                    }
-                    else return null;
-                }}
-            </Request>
+             <div><Markdown children={changelog} /></div>
         </Details>
     );
 }

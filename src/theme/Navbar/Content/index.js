@@ -60,9 +60,9 @@ export default function NavbarContent() {
   }, []);
 
   const mobile = width <= 996;
-  const index = useLocation().pathname === '/';
+  //  const index = useLocation().pathname === '/';
 
-  if (index && items.length == 6) items.shift(); // Remove search bar
+  //if (index && items.length == 6) items.shift(); // Remove search bar
 
   const [leftItems, rightItems] = splitNavbarItems(items);
   const searchBarItem = items.find((item) => item.type === 'search');
@@ -77,20 +77,20 @@ export default function NavbarContent() {
             <NavbarLogo />
           </div>
           <NavbarItems items={leftItems} />
-          {!index && (<NavbarColorModeToggle className={styles.colorModeToggle} />)}
+          <NavbarColorModeToggle className={styles.colorModeToggle} />
         </>
       }
       right={
         // TODO stop hardcoding items?
         // Ask the user to add the respective navbar items => more flexible
         <>
-          {!index && <NavbarItems items={rightItems} />}
+          <NavbarItems items={rightItems} />
           {!searchBarItem && (
             <NavbarSearch>
               <SearchBar />
             </NavbarSearch>
           )}
-          {(index || mobile) && <NavbarColorModeToggle className={styles.colorModeToggle} />}
+          {mobile && (<NavbarColorModeToggle className={styles.colorModeToggle} />)}
         </>
       }
     />
